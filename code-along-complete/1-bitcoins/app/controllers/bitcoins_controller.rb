@@ -12,6 +12,6 @@ class BitcoinsController < ApplicationController
     @usd_rate = bitcoin_data["USD"]["last"]
     @usd_value = @usd_rate * @bitcoin
 
-    render({ :template => "bitcoins/index" })
+    render({ :template => "bitcoins/index_bitcoin" })
   end
 end

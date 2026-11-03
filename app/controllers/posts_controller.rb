@@ -7,15 +7,22 @@ class PostsController < ApplicationController
     render({ :template => "posts/index" })
   end
 
-  # def new
-  #   # render posts/new view, the form for a new Post
-  # end
+  def new
+    # render posts/new view, the form for a new Post
+    render({ :template => "posts/new" })
+  end
 
-  # def create
-  #   # start with a new Post
-  #   # assign the form's values to the Post's columns
-  #   # save the Post row
-  #   # redirect the user
-  # end
+  def create
+    # start with a new Post
+    post = Post.new
+    # assign the form's values to the Post's columns
+    post["author"] = params["author"]
+    post["body"] = params["body"]
+    post["image"] = params["image"]
+    # save the Post row
+    post.save
+    # redirect the user
+    redirect_to("/posts")
+  end
 
 end

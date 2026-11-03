@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get("/data", { :controller => "data", :action => "show" })
   get("/tacos", { :controller => "tacos", :action => "index" })
   get("/dice", { :controller => "dice", :action => "index" })
+  get("/bitcoins", { :controller => "bitcoins", :action => "index" })
 
   # One line, seven routes: index, show, new, create, edit, update, destroy.
   # The line below each is the long form of its index route, for comparison.
